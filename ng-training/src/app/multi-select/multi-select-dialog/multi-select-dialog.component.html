@@ -1,0 +1,17 @@
+<div>
+  <mat-chip-list>
+    <mat-chip *ngFor="let item of selectData.onSelectItems" (click)="remove(item)">
+      {{item.key}}: {{item.value}}
+    </mat-chip>
+  </mat-chip-list>
+</div>
+
+<div>
+    <mat-chip color="primary" [selected]="data.onSelected" *ngFor="let data of selectData.selectList" (click)="addItem(data)">
+      {{data.key}}: {{data.value}}
+    </mat-chip>
+</div>
+
+<div>
+  <button (click)="close()">關閉</button>
+</div>

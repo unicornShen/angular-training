@@ -1,0 +1,13 @@
+<div [formGroup]="selectForm">
+  <select formControlName="selectA" (change)="onSelectChange()">
+    <option [ngValue]="">pls selected</option>
+    <!-- <option *ngFor="let item of selectItmes" [ngValue]="item.id">{{item.id}}: {{item.name}}</option> -->
+    <option ngValue="1">1: A</option>
+    <option ngValue="2">2: B</option>
+  </select>
+</div>
+
+<div>
+  {{selectForm.value | json}}
+</div>
+

@@ -1,0 +1,541 @@
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
+
+ //共用樣式禁止設定button，會影響datepicker樣式
+
+body {
+  background-color: #f0f0f0;
+  font-family: 'Microsoft JhengHei', '微軟正黑體', '黑體', 'Arial'
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+// input組合的共用樣式
+.inputs-content {
+  width: 100%;
+  background-color: #fff;
+  padding: 5px;
+  color: #2a2c38;
+
+  .data-content {
+    padding: 5px 10px;
+  }
+
+  .title {
+    display: inline-block;
+    width: 100px;
+    color: #333;
+    margin-right: 20px;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  .input-box {
+    margin-bottom: 5px;
+
+    .sub-box {
+      display: inline-block;
+      select {
+        margin: 20px 0px;
+      }
+      p {
+        margin-bottom: 3px;
+      }
+      &>div {
+        margin-bottom: 15px;
+
+        div {
+          display: inline-block;
+          vertical-align: top;
+
+          select {
+            display: block;
+            margin-bottom: 10px;
+
+            &:nth-child(2) {
+              width: 292px;
+              margin-left: -51px;
+            }
+          }
+        }
+
+        select {
+          margin: 0px;
+        }
+      }
+
+    }
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 240px;
+    height: 28px;
+    border-radius: 2px;
+    padding-left: 7px;
+    background-color: #ffffff;
+    border: solid 1px #e6e6e6;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"]  {
+    margin: 0px;
+    margin-right: 4px;
+  }
+
+  input[type="text"]:disabled,
+  input[type="password"]:disabled {
+    background-color: rgba(200, 200, 200, 0.5);
+  }
+
+  // 紅色外框提示
+  input.red-warning {
+      border: 1px solid red !important;
+  }
+
+  .input-area-disabled {
+    .title {
+      color: #ccc;
+    }
+
+    input[type="text"] {
+      border:  1px solid #eee;
+      background-color: rgba($color: #eee, $alpha: .1);
+    }
+  }
+
+
+  label {
+    margin-right: 15px;
+    font-weight: 500;
+  }
+
+  select {
+    width: 241px;
+    height: 28px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: solid 1px #e6e6e6;
+  }
+
+
+  select:disabled {
+    background-color: rgba(200, 200, 200, 0.5);
+  }
+
+  //共用樣式禁止設定button，會影響datepicker樣式
+  // button {
+  //   height: 28px;
+  //   border-radius: 2px;
+  //   background-color: #1e8c8c;
+  //   border: solid 1px #017c81;
+  //   padding: 0px 15px;
+  //   color: #fff;
+  // }
+
+  .warn-wording {
+    color: red;
+  }
+
+  #offer-reason {
+    vertical-align: top;
+    margin-top: 3px;
+  }
+}
+
+// radio button客製化樣式
+// .radio-format {
+//   position: relative;
+
+//   input[type=radio]+i {
+//     background: url('../assets/img/radiobtn-nml.svg') no-repeat;
+//     background-size: contain;
+//     width: 18px;
+//     height: 18px;
+//     display: inline-block;
+//     z-index: 1;
+//     position: absolute;
+//     left: -3px;
+//     top: 1px;
+//   }
+//   input[type=radio]:checked+i {
+//     background: url('../assets/img/radiobtn-selected.svg') no-repeat;
+//     background-size: contain;
+//     width: 18px;
+//     height: 18px;
+//     display: inline-block;
+//     z-index: 1;
+//     position: absolute;
+//     left: -3px;
+//     top: 1px;
+//   }
+
+//   input[type=radio]:disabled+i {
+//     background: url('../assets/img/radiobtn-disable.svg') no-repeat;
+//     background-size: contain;
+//     width: 18px;
+//     height: 18px;
+//     display: inline-block;
+//     z-index: 1;
+//     position: absolute;
+//     left: -3px;
+//     top: 1px;
+//   }
+
+//   input[type=radio][disabled]+i,
+//   input[type=radio][disabled]:checked+i {
+//     cursor: not-allowed;
+//   }
+// }
+
+// 下拉選單客製化樣式
+.select-format {
+  position: relative;
+  border-radius: 5px;
+  background-color: #fff;
+  display: inline-block;
+  width: 240px;
+
+  // ie使用(清除下拉選單原樣式)
+  select::-ms-expand {
+    display: none;
+  }
+  select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    color: #6a7088;
+    padding-right: 32px;
+    padding-left: 7px;
+  }
+  select.red-warning {
+    border: 1px solid red !important;
+  }
+  .glyphicon {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+    color: #ed8b26;
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    line-height: 28px;
+    text-align: center;
+    border-left: 1px solid #ccc;
+  }
+}
+
+// checkbox客製化樣式
+// .checkbox-format {
+//   position: relative;
+//   label {
+//     position: relative;
+//   }
+//   input[type=checkbox]+i {
+//     background: url('../assets/img/checkbox_normal.svg') no-repeat;
+//     background-size: contain;
+//     width: 18px;
+//     height: 18px;
+//     display: inline-block;
+//     z-index: 1;
+//     position: absolute;
+//     left: -3px;
+//     top: 0px;
+//   }
+//   input[type=checkbox]:checked+i {
+//     background: url('../assets/img/checkbox_pressed.svg') no-repeat;
+//     background-size: contain;
+//     width: 18px;
+//     height: 18px;
+//     display: inline-block;
+//     z-index: 1;
+//     position: absolute;
+//     left: -3px;
+//     top: 0px;
+//   }
+
+//   input[type=checkbox][disabled]+i,
+//   input[type=checkbox][disabled]:checked+i {
+//     cursor: not-allowed;
+//   }
+// }
+
+
+// 按鈕區域設定
+.btn-area {
+  text-align: center;
+  padding:5px 2px;
+
+
+  button {
+    height: 32px;
+    min-width: auto;
+    padding: 0px 15px;
+    color: #fff;
+    background-color: #a9a9a9;
+    border: 1px solid transparent;
+    margin-right: 5px;
+
+    &.btn-green {
+      background-color: #4eb5a5;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+// 深綠色長條標題區
+.deep-green-title {
+  background-color: #1e8c8c;
+  padding: 3px 13px;
+  color: #fff;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  height: 29px;
+  line-height: 25px;
+  margin-top: 0px;
+}
+
+// date-picker外層div，控制該元件的寬
+div.date-picker {
+  display: inline-block;
+  width: 120px;
+  margin-right:25px;
+}
+
+// table
+.table {
+  font-size: 14px;
+  box-shadow: 1px 1px 10px rgba(153, 153, 153, 0.5);
+  max-width: none;
+  border: 1px solid #a9a9a9;
+  border-collapse: collapse;
+  thead {
+    background-color: #007B81;
+    color: #fff;
+    font-weight: 500; // text-shadow: 1px 1px 3px #666;
+  }
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tbody>tr>td {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #a9a9a9;
+}
+
+// 收合區域
+.toggle-title {
+  cursor: pointer;
+}
+
+// .toggle-area {
+//    overflow: hidden;
+// }
+
+.panel-default > .panel-heading {
+  color: #fff;
+  background-color: #4eb5a5;
+  border-color: #4eb5a5;
+}
+
+.mat-dialog-title{
+  color: #fff;
+  background-color: #4eb5a5;
+  border-color: #4eb5a5;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.mat-dialog-content{
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  color: #2a2c38;
+
+  .data-content {
+    padding: 5px 10px;
+  }
+
+  .title {
+    display: inline-block;
+    width: 100px;
+    color: #333;
+    margin-right: 20px;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  .input-box {
+    margin-bottom: 26px;
+
+    .sub-box {
+      display: inline-block;
+      select {
+        margin: 20px 0px;
+      }
+      p {
+        margin-bottom: 3px;
+      }
+      &>div {
+        margin-bottom: 15px;
+
+        div {
+          display: inline-block;
+          vertical-align: top;
+
+          select {
+            display: block;
+            margin-bottom: 10px;
+
+            &:nth-child(2) {
+              width: 292px;
+              margin-left: -51px;
+            }
+          }
+        }
+
+        select {
+          margin: 0px;
+        }
+      }
+
+    }
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 240px;
+    height: 28px;
+    border-radius: 2px;
+    padding-left: 7px;
+    background-color: #ffffff;
+    border: solid 1px #e6e6e6;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"]  {
+    margin: 0px;
+    margin-right: 4px;
+  }
+
+  input[type="text"]:disabled,
+  input[type="password"]:disabled {
+    background-color: rgba($color: #eee, $alpha: .5);
+  }
+
+  // 紅色外框提示
+  input.red-warning {
+      border: 1px solid red !important;
+  }
+
+  .input-area-disabled {
+    .title {
+      color: #ccc;
+    }
+
+    input[type="text"] {
+      border:  1px solid #eee;
+      background-color: rgba($color: #eee, $alpha: .1);
+    }
+  }
+
+
+  label {
+    margin-right: 15px;
+    font-weight: 500;
+  }
+
+  // 下拉選單客製化樣式
+.select-format {
+  position: relative;
+  border-radius: 5px;
+  background-color: #fff;
+  display: inline-block;
+  width: 150px;
+
+  // ie使用(清除下拉選單原樣式)
+  select::-ms-expand {
+    display: none;
+  }
+  select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    color: #6a7088;
+    padding-right: 32px;
+    padding-left: 7px;
+  }
+  select.red-warning {
+    border: 1px solid red !important;
+  }
+  .glyphicon {
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    color: #ed8b26;
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    line-height: 25px;
+    text-align: center;
+    border-left: 1px solid #ccc;
+  }
+}
+
+  select:disabled {
+    background-color: rgba(238, 238, 238, 0.5);
+  }
+
+  .warn-wording {
+    color: red;
+  }
+
+  #offer-reason {
+    vertical-align: top;
+    margin-top: 3px;
+  }
+}
+
+.mat-dialog-actions {
+  padding: 12px 0;
+  display: block !important;
+  text-align: center;
+
+  button {
+    height: 32px;
+    min-width: auto;
+    padding: 0px 15px;
+    color: #fff;
+    background-color: #a9a9a9;
+    border: 1px solid transparent;
+    margin-right: 5px;
+
+    &.btn-green {
+      background-color: #4eb5a5;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
