@@ -1,19 +1,31 @@
-
-<h1 mat-dialog-title>Title</h1>
+<h1 mat-dialog-title>
+  {{selectData.title}}
+</h1>
 
 <mat-dialog-content>
-  <div>
-    <mat-chip-list>
-      <mat-chip *ngFor="let item of selectData.onSelectItems" (click)="remove(item)">
-        {{item.key}}: {{item.value}}
-      </mat-chip>
-    </mat-chip-list>
-  </div>
+  <table>
+    <tr>
+      <td>已選擇條件：</td>
+      <td>
+          <mat-chip-list>
+            <mat-chip *ngFor="let item of selectData.onSelectItems" (click)="remove(item)">
+              {{item.key}}: {{item.value}}
+            </mat-chip>
+          </mat-chip-list>
+      </td>
+    </tr>
+  </table>
+
+  <div style="padding:20px"></div>
+  <h1 mat-dialog-title>項目:</h1>
 
   <div>
-    <mat-chip color="primary" [selected]="data.onSelected" *ngFor="let data of selectData.selectList" (click)="addItem(data)" style="width: 150px;">
-      {{data.key}}: {{data.value}}
-    </mat-chip>
+    <!-- <mat-chip-list [multiple]="true" class="mat-chip-list-stacked" aria-orientation="vertical"> -->
+    <mat-chip-list [multiple]="true">
+      <mat-chip color="primary" [selected]="data.onSelected" *ngFor="let data of selectData.selectList" (click)="addItem(data)">
+        {{data.key}}: {{data.value}}
+      </mat-chip>
+    </mat-chip-list>
   </div>
 </mat-dialog-content>
 

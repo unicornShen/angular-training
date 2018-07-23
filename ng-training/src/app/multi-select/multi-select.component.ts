@@ -13,8 +13,9 @@ import { MultiSelectForm } from './model/MultiSelectForm.model';
 })
 export class MultiSelectComponent implements OnChanges {
 
-  @Input() selectList = [];
-  @Input() onSelectItems = [];
+  @Input() title: string; // 表頭.
+  @Input() selectList = []; // 來源清單.
+  @Input() onSelectItems = []; // 目標清單.
 
   selectData: MultiSelectForm = new MultiSelectForm;
 
@@ -23,10 +24,14 @@ export class MultiSelectComponent implements OnChanges {
   ) { }
 
   ngOnChanges() {
+    this.selectData.title = this.title;
     this.selectData.selectList = this.selectList;
     this.selectData.onSelectItems = this.onSelectItems;
   }
 
+  /**
+   * 開啟選擇視窗.
+   */
   selectOnClick() {
     console.log('selectOnClick()');
 
@@ -39,6 +44,18 @@ export class MultiSelectComponent implements OnChanges {
     dialogRef.afterClosed().subscribe(result => {
       console.log('[u] dialog closed...');
     });
+  }
+
+  /**
+   * 取得顯示文字.
+   */
+  getWording(): string {
+    if (this.onSelectItems.length > 0) {
+      return '已選擇 ' + this.onSelectItems.length + '項條件';
+
+    } else {
+      return '請選擇...';
+    }
   }
 
 }

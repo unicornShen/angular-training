@@ -33,9 +33,12 @@ export class MultiSelectDialogComponent implements OnInit {
     console.log('MultiSelectDialogComponent.addItem()');
 
     const index = this.data.onSelectItems.indexOf(item);
-    if(index < 0) {
+    if (index < 0) {
       this.data.onSelectItems.push(item);
       item.onSelected = true;
+
+    } else {
+      this.remove(item);
     }
   }
 
