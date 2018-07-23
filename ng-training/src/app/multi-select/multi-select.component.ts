@@ -3,6 +3,9 @@ import { MatDialog } from '@angular/material';
 import { MultiSelectDialogComponent } from './multi-select-dialog/multi-select-dialog.component';
 import { MultiSelectForm } from './model/MultiSelectForm.model';
 
+/**
+ * 多選元件.
+ */
 @Component({
   selector: 'txn-common-multi-select',
   templateUrl: './multi-select.component.html',

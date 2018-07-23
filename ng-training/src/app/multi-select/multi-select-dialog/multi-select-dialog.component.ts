@@ -4,6 +4,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MultiSelectForm } from '../model/MultiSelectForm.model';
 import { SelectItemForm } from '../model/SelectItemForm.model';
 
+/**
+ * 多選元件視窗.
+ */
 @Component({
   selector: 'txn-common-multi-select-dialog',
   templateUrl: './multi-select-dialog.component.html',
@@ -19,6 +22,7 @@ export class MultiSelectDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('MultiSelectDialogComponent.ngOnInit()');
     this.selectData = this.data;
   }
 
@@ -26,18 +30,12 @@ export class MultiSelectDialogComponent implements OnInit {
    * 新增選項﹒
    */
   addItem(item: SelectItemForm) {
-    console.log('addItem()');
+    console.log('MultiSelectDialogComponent.addItem()');
 
     const index = this.data.onSelectItems.indexOf(item);
     if(index < 0) {
       this.data.onSelectItems.push(item);
-
       item.onSelected = true;
-
-      // const selectListIndex = this.data.selectList.indexOf(item);
-      // if (selectListIndex >= 0) {
-      //   this.data.selectList[selectListIndex].onSelected = true;
-      // }
     }
   }
 
@@ -45,7 +43,7 @@ export class MultiSelectDialogComponent implements OnInit {
    * 刪除選項.
    */
   remove(item: SelectItemForm) {
-    console.log('remove()');
+    console.log('MultiSelectDialogComponent.remove()');
 
     const index = this.data.onSelectItems.indexOf(item);
     if (index >= 0) {
@@ -62,6 +60,8 @@ export class MultiSelectDialogComponent implements OnInit {
    * 關閉.
    */
   close() {
+    console.log('MultiSelectDialogComponent.close()');
+
     this.dialogRef.close();
   }
 
