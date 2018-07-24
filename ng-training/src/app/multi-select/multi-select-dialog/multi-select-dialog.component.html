@@ -27,8 +27,28 @@
       </mat-chip>
     </mat-chip-list>
   </div>
+
+  <hr/>
+
+  <div>
+    <table>
+      <ng-template ngFor let-data [ngForOf]="selectData.selectList" let-i="index">
+
+        <ng-template [ngIf]="i % 3 == 0">
+          <tr>
+        </ng-template>
+
+          <td>
+            <mat-chip color="primary" [selected]="data.onSelected" (click)="addItem(data)" style="width: 170px;">
+              {{data.key}}: {{data.value}}
+            </mat-chip>
+          </td>
+
+      </ng-template>
+    </table>
+  </div>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button (click)="close()">關閉</button>
+  <button class="btn-green" (click)="close()">關閉</button>
 </mat-dialog-actions>
