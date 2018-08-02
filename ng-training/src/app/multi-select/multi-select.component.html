@@ -1,4 +1,15 @@
-
 <div>
   <input (click)="selectOnClick()" [value]="getWording()" readonly>
 </div>
+
+<span class="select-format" style="width: 130px;">
+  <select>
+    <option *ngFor="let item of onSelectItems">
+      {{item.key}}: {{item.value}}
+    </option>
+  </select>
+  <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+</span>
+<span class="glyphicon glyphicon glyphicon-list-alt" aria-hidden="true" (click)="selectOnClick()"></span>
+
+<!-- <button (click)="selectOnClick()" type="button" class="btn" style="width: 50px; background-color: #4eb5a5; color: #fff;">選擇</button> -->

@@ -3,40 +3,41 @@
 </h1>
 
 <mat-dialog-content>
-  <table>
-    <tr>
-      <td>已選擇條件：</td>
-      <td>
+  <div class="inputs-content">
+    <table>
+      <tr>
+        <td style="width: 80px;">已選條件：</td>
+        <td>
           <mat-chip-list>
             <mat-chip *ngFor="let item of selectData.onSelectItems" (click)="remove(item)">
               {{item.key}}: {{item.value}}
             </mat-chip>
           </mat-chip-list>
-      </td>
-    </tr>
-  </table>
+        </td>
+      </tr>
+    </table>
 
-  <div style="padding:20px"></div>
-  <h1 mat-dialog-title>項目:</h1>
+    <div style="padding:20px"></div>
+    <h1 mat-dialog-title>項目:</h1>
 
-  <div>
-    <!-- <mat-chip-list [multiple]="true" class="mat-chip-list-stacked" aria-orientation="vertical"> -->
-    <mat-chip-list [multiple]="true">
-      <mat-chip color="primary" [selected]="data.onSelected" *ngFor="let data of selectData.selectList" (click)="addItem(data)">
-        {{data.key}}: {{data.value}}
-      </mat-chip>
-    </mat-chip-list>
-  </div>
+    <div>
+      <!-- <mat-chip-list [multiple]="true" class="mat-chip-list-stacked" aria-orientation="vertical"> -->
+      <mat-chip-list [multiple]="true">
+        <mat-chip color="primary" [selected]="data.onSelected" *ngFor="let data of selectData.selectList" (click)="addItem(data)">
+          {{data.key}}: {{data.value}}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
 
-  <hr/>
+    <hr/>
 
-  <div>
-    <table>
-      <ng-template ngFor let-data [ngForOf]="selectData.selectList" let-i="index">
+    <div>
+      <table>
+        <ng-template ngFor let-data [ngForOf]="selectData.selectList" let-i="index">
 
-        <ng-template [ngIf]="i % 3 == 0">
-          <tr>
-        </ng-template>
+          <ng-template [ngIf]="i % 3 == 0">
+            <tr>
+          </ng-template>
 
           <td>
             <mat-chip color="primary" [selected]="data.onSelected" (click)="addItem(data)" style="width: 170px;">
@@ -44,8 +45,9 @@
             </mat-chip>
           </td>
 
-      </ng-template>
-    </table>
+        </ng-template>
+      </table>
+    </div>
   </div>
 </mat-dialog-content>
 

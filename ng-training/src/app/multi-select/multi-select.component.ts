@@ -37,7 +37,7 @@ export class MultiSelectComponent implements OnChanges {
 
     let dialogRef = this.dialog.open(MultiSelectDialogComponent, {
       width: '600px',
-      height: '450px',
+      // height: '450px',
       data: this.selectData
     });
 

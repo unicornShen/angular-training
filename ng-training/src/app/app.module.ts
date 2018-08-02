@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TestSelectModule } from './test-select/test-select.module';
 import { MultiSelectModule } from './multi-select/multi-select.module';
+import { TestSortHeaderModule } from './test-sort-header/test-sort-header.module';
 
 
 @NgModule({
@@ -13,9 +14,11 @@ import { MultiSelectModule } from './multi-select/multi-select.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+
     TestSelectModule,
     MultiSelectModule,
-    BrowserAnimationsModule
+    TestSortHeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
