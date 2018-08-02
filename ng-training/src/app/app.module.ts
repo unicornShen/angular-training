@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TestSelectModule } from './test-select/test-select.module';
 import { MultiSelectModule } from './multi-select/multi-select.module';
 import { TestSortHeaderModule } from './test-sort-header/test-sort-header.module';
+import { TestDatepickerModule } from './test-datepicker/test-datepicker.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TestSortHeaderModule } from './test-sort-header/test-sort-header.module
 
     TestSelectModule,
     MultiSelectModule,
-    TestSortHeaderModule
+    TestSortHeaderModule,
+    TestDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

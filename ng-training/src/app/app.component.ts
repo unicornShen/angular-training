@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { isNull } from 'util';
+import { DatepickerVo } from './test-datepicker/model/DatepickerVo.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
 
   selectList = [
@@ -56,4 +57,11 @@ export class AppComponent {
 
   selectItems = [];
 
+  dateObj: DatepickerVo = new DatepickerVo;
+
+
+
+  ngOnInit(): void {
+    this.dateObj.dateValue= '2018/01/02';
+  }
 }

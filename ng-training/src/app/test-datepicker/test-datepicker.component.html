@@ -1,0 +1,16 @@
+<div class="date-picker">
+  <div class="date-input">
+    <div class="date-range" [ngClass]="{disable: isDisabled, f12RequiredStyel: isRequired && !dateObj.dateValue}" >
+      <input type="text" [value]="dateObj.dateValue" (blur)="onBlurCheck($event.target.value);" [disabled]="isDisabled" >
+    </div>
+
+    <span class="glyphicon glyphicon-calendar" aria-hidden="true" (click)="toggle()" *ngIf="!isHideIcon">
+    </span>
+
+    <div class="date-box" *ngIf="doesDatepickerShow()">
+      <div class="clearfix"></div>
+      <datepicker [(ngModel)]="dt" [showWeeks]="false" [minDate]="minDate" [maxDate]="maxDate" (selectionDone)="selectionDone($event)">
+      </datepicker>
+    </div>
+  </div>
+</div>

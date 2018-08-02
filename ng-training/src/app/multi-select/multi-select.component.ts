@@ -17,6 +17,8 @@ export class MultiSelectComponent implements OnChanges {
   @Input() selectList = []; // 來源清單.
   @Input() onSelectItems = []; // 目標清單.
 
+  @Input() isRequired = false;
+
   selectData: MultiSelectForm = new MultiSelectForm;
 
   constructor(

@@ -1,11 +1,21 @@
 <div>
   <app-test-select></app-test-select>
 </div>
+<hr/>
 
 <div>
   <txn-common-multi-select title="選擇條件" [selectList]="selectList" [(onSelectItems)]="selectItems"></txn-common-multi-select>
 </div>
+<hr/>
 
 <div>
   <app-test-sort-header></app-test-sort-header>
 </div>
+<hr/>
+
+<div>
+  <app-test-datepicker [dateObj]="dateObj"></app-test-datepicker>
+  <app-test-datepicker [dateObj]="dateObj" [isHideIcon]="true"></app-test-datepicker>
+  <app-test-datepicker [dateObj]="dateObj" [isHideIcon]="false"></app-test-datepicker>
+</div>
+<hr/>

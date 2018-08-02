@@ -3,7 +3,7 @@
 </div>
 
 <span class="select-format" style="width: 130px;">
-  <select>
+  <select [ngClass]="{requiredStyel: onSelectItems.length == 0 && isRequired}">
     <option *ngFor="let item of onSelectItems">
       {{item.key}}: {{item.value}}
     </option>
