@@ -9,6 +9,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class TestSelectComponent implements OnInit {
 
+  isCheckRequire = false;
+
   selectForm: FormGroup;
   selectItmes = [
     {key: '1', value: 'A'},
@@ -26,7 +28,9 @@ export class TestSelectComponent implements OnInit {
 
   createSelectForm() {
     this.selectForm = this.fb.group({
-      selectA: '1'
+      selectA: '',
+      selectB: '1',
+      inputValue: '',
     });
   }
 
