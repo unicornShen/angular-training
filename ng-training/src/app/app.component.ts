@@ -64,4 +64,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.dateObj.dateValue= '2018/01/02';
   }
+
+
+  testEmit(data: any) {
+    console.log('[u] AppComponent.testEmit()');
+    console.log(data);
+  }
 }
