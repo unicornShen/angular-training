@@ -8,6 +8,7 @@ import { MultiSelectModule } from './multi-select/multi-select.module';
 import { TestSortHeaderModule } from './test-sort-header/test-sort-header.module';
 import { TestDatepickerModule } from './test-datepicker/test-datepicker.module';
 import { TestEventEmitterModule } from './test-event-emitter/test-event-emitter.module';
+import { TestValidationModule } from './test-validation/test-validation.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TestEventEmitterModule } from './test-event-emitter/test-event-emitter.
     TestSortHeaderModule,
     TestDatepickerModule,
     TestEventEmitterModule,
+    TestValidationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

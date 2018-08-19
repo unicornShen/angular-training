@@ -1,0 +1,23 @@
+
+<div [formGroup]="editForm">
+  <input formControlName="inputA">
+  <br>
+  <input formControlName="inputB">
+  <button (click)="setRequiredButton();">set Required</button>
+  <br>
+  <input formControlName="inputC">
+  <br>
+  <input formControlName="inputD">
+  <br>
+  <input formControlName="inputE">
+  <br>
+  <button (click)="thisEditForm();">this edit form</button>
+</div>
+<div>
+  valid: {{editForm.valid}}
+  <br>
+  invalid: {{editForm.invalid}}
+</div>
+<div>
+  {{editForm.value | json}}
+</div>
