@@ -9,6 +9,7 @@ import { TestSortHeaderModule } from './test-sort-header/test-sort-header.module
 import { TestDatepickerModule } from './test-datepicker/test-datepicker.module';
 import { TestEventEmitterModule } from './test-event-emitter/test-event-emitter.module';
 import { TestValidationModule } from './test-validation/test-validation.module';
+import { TestDateModule } from './test-date/test-date.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TestValidationModule } from './test-validation/test-validation.module';
     TestDatepickerModule,
     TestEventEmitterModule,
     TestValidationModule,
+    TestDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
