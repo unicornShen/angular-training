@@ -1,0 +1,9 @@
+
+<div [formGroup]="testForm">
+  <input formControlName="testName">
+  <br/>
+  <app-test-inner [formControl]="testForm?.get('testInner')"></app-test-inner>
+</div>
+<div>
+  {{testForm.value | json}}
+</div>

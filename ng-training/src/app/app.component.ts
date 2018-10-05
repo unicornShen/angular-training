@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { isNull } from 'util';
 import { DatepickerVo } from './test-datepicker/model/DatepickerVo.model';
+import { TestEventEmitterComponent } from './test-event-emitter/test-event-emitter.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
   title = 'app';
 
   selectList = [
@@ -59,15 +60,21 @@ export class AppComponent implements OnInit {
 
   dateObj: DatepickerVo = new DatepickerVo;
 
-
+  // @ViewChild(TestEventEmitterComponent) testEvent: TestEventEmitterComponent;
 
   ngOnInit(): void {
     this.dateObj.dateValue= '2018/01/02';
   }
 
+  ngAfterViewChecked() {
+    // console.log('[u] ngAfterViewChecked()');
+    // this.testEvent.testMethod();
+  }
 
   testEmit(data: any) {
     console.log('[u] AppComponent.testEmit()');
     console.log(data);
   }
+
+
 }

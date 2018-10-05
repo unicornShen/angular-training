@@ -32,4 +32,8 @@ export class TestEventEmitterComponent implements OnInit {
     }
   }
 
+  testMethod() {
+    console.log('[t] testMethod()');
+  }
+
 }

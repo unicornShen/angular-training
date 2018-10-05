@@ -10,6 +10,7 @@ import { TestDatepickerModule } from './test-datepicker/test-datepicker.module';
 import { TestEventEmitterModule } from './test-event-emitter/test-event-emitter.module';
 import { TestValidationModule } from './test-validation/test-validation.module';
 import { TestDateModule } from './test-date/test-date.module';
+import { TestFormGroupInnerModule } from './test-form-group-inner/test-form-group-inner.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TestDateModule } from './test-date/test-date.module';
     TestEventEmitterModule,
     TestValidationModule,
     TestDateModule,
+    TestFormGroupInnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
