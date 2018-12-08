@@ -11,6 +11,7 @@ import { TestEventEmitterModule } from './test-event-emitter/test-event-emitter.
 import { TestValidationModule } from './test-validation/test-validation.module';
 import { TestDateModule } from './test-date/test-date.module';
 import { TestFormGroupInnerModule } from './test-form-group-inner/test-form-group-inner.module';
+import { TestTreeModule } from './test-tree/test-tree.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TestFormGroupInnerModule } from './test-form-group-inner/test-form-grou
     TestValidationModule,
     TestDateModule,
     TestFormGroupInnerModule,
+    TestTreeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
